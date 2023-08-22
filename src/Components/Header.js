@@ -7,7 +7,7 @@ const Header = () => {
     const Navigate = useNavigate();
     const dispatch = useDispatch()
     const handlelogOut =()=>{
-        dispatch(setLogout)
+        dispatch(setLogout())
         return Navigate('/')
     }
   return (
@@ -22,7 +22,7 @@ const Header = () => {
      <Link to='UserProfile'className='px-2 m-2 hover:font-bold'>User Profile</Link>
      </div>
      <div className='col-span-2 '>
-      <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline"
+      <button type='button' className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline"
       onClick={()=>handlelogOut()}>Logout</button>
      </div>
     </div>
