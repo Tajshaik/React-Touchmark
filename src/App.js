@@ -2,7 +2,7 @@ import { Children } from 'react';
 import './App.css';
 import Home from './Components/Home';
 import Login from './Components/Login';
-import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Navigate, RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';
 import Newtransaction from './Components/Newtransaction';
 import Viewtransaction from './Components/Viewtransaction';
 import Userprofile from './Components/Userprofile';
@@ -10,7 +10,7 @@ import { UseSelector, useSelector } from 'react-redux';
 
 function App() {
   const LoggedIn = useSelector((state) => state.AuthSlice.isLoggedIn)
-  const appRouter = createBrowserRouter([
+  const appRouter = createHashRouter([
     {
       path:'/',
       element: <Login/>,
